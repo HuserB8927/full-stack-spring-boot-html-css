@@ -1,0 +1,109 @@
+/*############## CUSTOM STYLES ################*/
+.navbar {
+	background: #302a34; /*for browsers that do not support  gradient.*/
+    background: linear-gradient(#302a34, #333300, #493a36);
+	display: flex;
+	max-width: 100%;
+	margin: none;
+	padding: none;
+}
+.display-4 {
+	font-family: "Times New Roman", Times, serif;
+	text-shadow: 2px 2px;
+}
+
+.jumbotron  {
+    text-align: center;
+    background: none;
+}
+.sectionLight {
+    background-color: #eceeef;
+    padding: 2rem;
+}
+.sectionDark {
+    background-color: #cccccc;
+    padding: 2rem;
+}
+.coolStuffWrapper {
+    margin-top: 20px;
+}
+button.coolStuffBtn { /*we're a little bit more specific here and we say that any class of coolStuffBtn that is child of button, this is the styling that we want to use*/
+    background-color: red;
+    color: #ffffff;
+    display:block;
+    margin: auto;
+    
+}
+h5.modal-title {
+    display: block;
+    margin: auto;
+    
+}
+.modalFormWrapper {
+    padding: 2rem;
+}
+.imgCenter {
+    display: block;
+    margin: auto;
+}
+.btnCenter {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 50%;
+    
+}
+.footerImg {
+    padding: 10px;
+}
+.contact {
+	color: #ffffff;
+	margin: auto;
+	padding auto;
+}
+.fa {
+    margin: 10px;
+}
+.fa-github-square {
+    color: #ffffff;
+}
+.fa-stack-overflow {
+    color: #fbb117;
+}
+.fa-youtube-square {
+    color: #FF0000;
+}
+.socialWrapper {
+    margin: auto;
+}
+.container-fluid {
+	background: #302a34; /*for browsers that do not support  gradient.*/
+    background: linear-gradient(#302a34, #333300, #493a36);
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
