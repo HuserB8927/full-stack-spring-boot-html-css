@@ -1,17 +1,26 @@
 package com.benjaminhalasz.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 @EnableGlobalMethodSecurity(securedEnabled=true)
 @Configuration
 public class SecurityConf extends WebSecurityConfigurerAdapter {
+	
+	String[] staticResources  =  {
+	        "/css/**",
+	        "/images/**"
+	        
+	    };
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
@@ -43,13 +52,21 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 		}
 	}
 	@Override
-	protected void configure(HttpSecurity httpSec) {
+    public void configure(WebSecurity web) {
+        web
+            .ignoring()
+            .antMatchers(staticResources);
+   
+	        
+	}
+	@Override
+	public void configure(HttpSecurity httpSec) {
+		
 	
 		try {
 			httpSec.authorizeRequests()
-			//	.antMatchers(HttpMethod.GET, "/").permitAll()
-			//	.antMatchers("/delete").hasRole("ADMIN)")
-				.antMatchers("/login", "/*.css", "/*.js").permitAll()
+				.antMatchers(staticResources).permitAll()
+				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 				.antMatchers("/admin/**").hasRole("ADMIN")
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/reg").permitAll()
@@ -58,10 +75,10 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 				.formLogin()
 				.loginPage("/login")
 				.permitAll()
-			.and()
-				.logout()
-				.logoutSuccessUrl("/login?logout")
-				.permitAll();
+				.and()
+		.logout()
+			.logoutSuccessUrl("/login?logout")
+			.permitAll();
 		} catch (Exception ex) {
 			System.out.println(" " + ex.getMessage());
 		}
@@ -69,32 +86,3 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 	
 	}
 }
-
-/*
- * 
- *@Override
-	protected void configure(HttpSecurity http) {
-		
-		try {
-			http
-			.authorizeRequests()
-			.antMatchers("/admin/**").hasRole("ADMIN")
-			.antMatchers("/registration").permitAll()
-			.antMatchers("/reg").permitAll()
-			.antMatchers("/activation/**").permitAll()
-			.anyRequest().authenticated()
-			.and()
-		.formLogin()
-			.loginPage("/login")
-			.usernameParameter("admin")
-			.passwordParameter("admin")
-			.permitAll()
-			.and()
-		.logout()
-			.logoutSuccessUrl("/login?logout")
-			.permitAll();
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-}*/
