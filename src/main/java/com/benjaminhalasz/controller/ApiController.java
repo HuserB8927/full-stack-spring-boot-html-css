@@ -1,5 +1,6 @@
 package com.benjaminhalasz.controller;
 
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;

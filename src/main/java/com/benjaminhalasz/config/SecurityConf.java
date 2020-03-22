@@ -49,6 +49,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 			httpSec.authorizeRequests()
 			//	.antMatchers(HttpMethod.GET, "/").permitAll()
 			//	.antMatchers("/delete").hasRole("ADMIN)")
+				.antMatchers("/login", "/*.css", "/*.js").permitAll()
 				.antMatchers("/admin/**").hasRole("ADMIN")
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/reg").permitAll()
