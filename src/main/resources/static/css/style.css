@@ -7,6 +7,16 @@
 	margin: none;
 	padding: none;
 }
+.helloUser{
+	color: white;
+	align: middle;
+	margin:  auto;
+	padding: auto;
+}
+.log-out {
+	align: right;
+	
+}
 .display-4 {
 	font-family: "Times New Roman", Times, serif;
 	text-shadow: 2px 2px;

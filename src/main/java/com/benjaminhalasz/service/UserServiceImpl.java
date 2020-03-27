@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.benjaminhalasz.model.Role;
@@ -20,6 +21,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	private RoleRepository roleRepository;
 	
 	private final String USER_ROLE = "USER";
+	
+	@Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+	
+	
 	
 	@Autowired
 	public void UserRepository(UserRepository userRepository, RoleRepository roleRepository) {
@@ -53,6 +59,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		}
 		userToRegister.setActivation(generateKey());
 		userToRegister.setEnabled(true);
+		userToRegister.setPassword(passwordEncoder.encode(userToRegister.getPassword()));
 		userRepository.save(userToRegister);
 		
 		return "ok";
@@ -83,4 +90,5 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		return "ok";
 		
 	}
+
 }

@@ -24,6 +24,7 @@ public class ApiController {
 	private EmailService emailService;
 	private UserService userService;
 	
+	
 	@Autowired
 	public void setEmailService(EmailService emailService) {
 		this.emailService = emailService;
@@ -71,6 +72,7 @@ public class ApiController {
 		String result = userService.userActivation(code);
 		return "auth/login?activationsuccess";
 	}
+	
 }
 
 
