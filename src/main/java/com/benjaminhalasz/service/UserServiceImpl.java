@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 			userToRegister.addRoles(USER_ROLE);
 		}
 		userToRegister.setActivation(generateKey());
-		userToRegister.setEnabled(false);
+		userToRegister.setEnabled(true);
 		userToRegister.setPassword(passwordEncoder.encode(userToRegister.getPassword()));
 		userRepository.save(userToRegister);
 		
