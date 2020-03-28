@@ -24,8 +24,7 @@
                 <div class="col-sm-12 col-md-8">
                     <div class="card signin-card">
                         <div class="card-block">
-                          <!-- <img src="/imgages/logindetails.png" class="img-fluid signin-img"> -->
-                          <img src="images/logindetails.png" width="50%" height="50%" class="img-fluid signin-img">
+                         <!-- <img src="images/logindetails.png" width="50%" height="50%" class="img-fluid signin-img"> -->
                             <form name="login" th:action="@{/login}" method="post" class="signin-form">
                             	<div class="form-group">
                                 <h2 class="form-signin-heading">Please sign in</h2>
@@ -41,13 +40,13 @@
                                 <button class="btn btn-lg btn-primary btn-block signin-btn" type="submit">Login</button>
                                 <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
-                              <label class="custom-control-label" for="customCheck1">Remember me <a href="#"> Need help?</a></label>
+                             <!-- <label class="custom-control-label" for="customCheck1">Remember me <a href="#"> Need help?</a></label> -->
+                             <a class= "new-account" href="/registration">Create New Account</a>
                             </div>
                         </form>
                         
                     </div>
                 </div>
-                <a class= "new-account" href="/registration">Create New Account</a>
             </div>
         <div class="col"></div>
     </div>

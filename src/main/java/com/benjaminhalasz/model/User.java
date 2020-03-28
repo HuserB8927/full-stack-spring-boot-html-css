@@ -28,8 +28,13 @@ public class User {
 	
 	private String fullName;
 	
-	boolean enabled;
-	String activation;
+	private boolean enabled;
+	private String activation;
+	
+	private String formEmail;
+	private String formName;
+	
+	
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable( 
@@ -40,6 +45,8 @@ public class User {
 	private Set<Role> roles = new HashSet<Role>();
 	
 	public User() {
+		super();
+		this.enabled = false;
 		
 	}
 	
@@ -94,6 +101,22 @@ public class User {
 
 	public void setActivation(String activation) {
 		this.activation = activation;
+	}
+
+	public String getFormEmail() {
+		return formEmail;
+	}
+
+	public String getFormName() {
+		return formName;
+	}
+
+	public void setFormEmail(String formEmail) {
+		this.formEmail = formEmail;
+	}
+
+	public void setFormName(String formName) {
+		this.formName = formName;
 	}
 
 	@Override

@@ -1,5 +1,5 @@
 body.signin-body {
-    background-color: azure
+    background-image: linear-gradient(to right, #f0f0f5, #ccddff, #6699ff, #ccddff, #f0f0f5);
 }
 .container.signin-container {
     margin-top: 20%;

@@ -1,22 +1,33 @@
-/*############## CUSTOM STYLES ################*/
+/*############## CUSTOM STYLES FOR NAVBAR ################*/
+
 .navbar {
 	background: #302a34; /*for browsers that do not support  gradient.*/
-    background: linear-gradient(#302a34, #333300, #493a36);
+    background: linear-gradient(#787878, #3c3c3c, #000000);
 	display: flex;
 	max-width: 100%;
-	margin: none;
+	margin: none;	
 	padding: none;
 }
+.button-logout {
+	text-align:right;
+	margin: auto;
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 10px;
+    border-radius: 10%;
+   
+}
+/*############## CUSTOM STYLES FOR WELCOME BLOCK ################*/
 .helloUser{
+	
+	font-family: "Times New Roman", Times, serif;
 	color: white;
 	align: middle;
 	margin:  auto;
-	padding: auto;
+	padding: 15px;
 }
-.log-out {
-	align: right;
-	
-}
+
 .display-4 {
 	font-family: "Times New Roman", Times, serif;
 	text-shadow: 2px 2px;
@@ -26,12 +37,15 @@
     text-align: center;
     background: none;
 }
+/*############## CUSTOM STYLES FOR `MY  NAME IS BENJAMIN...` ################*/
+
 .sectionLight {
-    background-color: #eceeef;
+    background-image: linear-gradient(to right, #f0f0f5, #ccddff, #6699ff, #ccddff, #f0f0f5);
     padding: 2rem;
 }
+/*############## CUSTOM STYLES FOR SECTION `GET  IN TOUCH` ################*/
 .sectionDark {
-    background-color: #cccccc;
+    background-color: rgb(240, 240, 240);
     padding: 2rem;
 }
 .coolStuffWrapper {
@@ -42,13 +56,13 @@ button.coolStuffBtn { /*we're a little bit more specific here and we say that an
     color: #ffffff;
     display:block;
     margin: auto;
-    
+    border-radius: 5%;
+   
 }
-h5.modal-title {
-    display: block;
-    margin: auto;
-    
+form-group.forName {
+	color: white;
 }
+
 .modalFormWrapper {
     padding: 2rem;
 }
@@ -64,9 +78,7 @@ h5.modal-title {
     width: 50%;
     
 }
-.footerImg {
-    padding: 10px;
-}
+/*############## CUSTOM STYLES FOR FOOTER ################*/
 .contact {
 	color: #ffffff;
 	margin: auto;
@@ -87,12 +99,6 @@ h5.modal-title {
 .socialWrapper {
     margin: auto;
 }
-.container-fluid {
-	background: #302a34; /*for browsers that do not support  gradient.*/
-    background: linear-gradient(#302a34, #333300, #493a36);
-	
-}
-
 
 
 
