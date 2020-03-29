@@ -11,4 +11,6 @@ public interface UserService {
 
 	public String userActivation(String code);
 
+	
+
 }

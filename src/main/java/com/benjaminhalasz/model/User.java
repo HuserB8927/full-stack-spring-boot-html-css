@@ -31,8 +31,7 @@ public class User {
 	private boolean enabled;
 	private String activation;
 	
-	private String formEmail;
-	private String formName;
+	
 	
 	
 	
@@ -103,22 +102,7 @@ public class User {
 		this.activation = activation;
 	}
 
-	public String getFormEmail() {
-		return formEmail;
-	}
-
-	public String getFormName() {
-		return formName;
-	}
-
-	public void setFormEmail(String formEmail) {
-		this.formEmail = formEmail;
-	}
-
-	public void setFormName(String formName) {
-		this.formName = formName;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", fullName=" + fullName + "]";
