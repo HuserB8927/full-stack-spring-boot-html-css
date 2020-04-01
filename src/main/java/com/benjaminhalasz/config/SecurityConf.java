@@ -53,6 +53,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 			 System.out.println(" " + e.getMessage());
 		}
 	}
+	
 	@Override
     public void configure(WebSecurity web) {
         web
@@ -70,7 +71,8 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 				
 				.antMatchers(staticResources).permitAll()
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-				.antMatchers("/admin/**").hasRole("ADMIN")
+				.antMatchers("/admin/**").hasRole("USER")
+				.antMatchers("/").hasRole("USER")
 				//.antMatchers("/").permitAll()
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/reg").permitAll()
@@ -80,6 +82,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 			.and()
 				.formLogin()
 				.loginPage("/login").permitAll()
+				.and().rememberMe().tokenValiditySeconds(60*60*7).key("message")
 				.and()
 		.logout()
 			.logoutSuccessUrl("/login?logout")
@@ -103,6 +106,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    	
         auth.authenticationProvider(authenticationProvider());
     }
     
