@@ -4,16 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Description;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @EnableGlobalMethodSecurity(securedEnabled=true)
+@EnableWebSecurity
 @Configuration
 public class SecurityConf extends WebSecurityConfigurerAdapter {
 	
@@ -42,11 +47,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 			auth
 			.inMemoryAuthentication()
 				.withUser("user")
-				.password("{noop}user") //Add password storage format, for plain text, add {noop} avoiding the error: java.lang.IllegalArgumentException: There is no PasswordEncoder mapped for the id "null"
-				.roles("USER")
-			.and()
-				.withUser("admin")
-				.password("{noop}admin")
+				.password("user")
 				.roles("USER");
 		} catch (Exception e) {
 			 System.out.println(" " + e.getMessage());
@@ -70,6 +71,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 				.antMatchers(staticResources).permitAll()
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 				.antMatchers("/admin/**").hasRole("ADMIN")
+				//.antMatchers("/").permitAll()
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/reg").permitAll()
 				.antMatchers("/log").permitAll()
@@ -77,8 +79,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated()
 			.and()
 				.formLogin()
-				.loginPage("/login")
-				.permitAll()
+				.loginPage("/login").permitAll()
 				.and()
 		.logout()
 			.logoutSuccessUrl("/login?logout")
@@ -104,6 +105,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
     }
-	
+    
+    
 	
 }

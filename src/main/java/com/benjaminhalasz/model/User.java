@@ -1,5 +1,6 @@
 package com.benjaminhalasz.model;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,6 +31,8 @@ public class User {
 	
 	private boolean enabled;
 	private String activation;
+	
+	private Date date;
 	
 	
 	
@@ -101,8 +104,13 @@ public class User {
 	public void setActivation(String activation) {
 		this.activation = activation;
 	}
+	
 
 	
+	public Date getDate() {
+		return date;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", fullName=" + fullName + "]";

@@ -5,26 +5,36 @@
     background: linear-gradient(#787878, #3c3c3c, #000000);
 	display: flex;
 	max-width: 100%;
-	margin: none;	
-	padding: none;
+	
+}
+.container {
+	max-width: 100%
 }
 .button-logout {
 	text-align:right;
-	margin: auto;
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 10px;
-    border-radius: 10%;
-   
+	background-color: #e7e7e7; 
+	color: black;
+  	border: 2px solid black;
+  	border-radius: 7%;
+ 	padding: 7px 16px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 14px;
+  	margin: 4px 2px;
+  	transition-duration: 0.4s;
+  	cursor: pointer;
+  	-webkit-border-radius: 7px;   
 }
+
+
 /*############## CUSTOM STYLES FOR WELCOME BLOCK ################*/
+
 .helloUser{
 	
 	font-family: "Times New Roman", Times, serif;
-	color: white;
+	color: black;
 	align: middle;
-	margin:  auto;
 	padding: 15px;
 }
 
@@ -33,16 +43,36 @@
 	text-shadow: 2px 2px;
 }
 
-.jumbotron  {
+.jumbotron-fluid  {
     text-align: center;
     background: none;
+   
 }
+
+
+
 /*############## CUSTOM STYLES FOR `MY  NAME IS BENJAMIN...` ################*/
 
 .sectionLight {
     background-image: linear-gradient(to right, #f0f0f5, #ccddff, #6699ff, #ccddff, #f0f0f5);
     padding: 2rem;
 }
+/*############## TOGGLE BUTTON###############*/
+.toggle-btn {
+	background-color: #555555;
+	color: white;
+	display: block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 50%;
+    border-radius: 5%;
+    transition-duration: 0.4s;
+    
+}
+
+
+
 /*############## CUSTOM STYLES FOR SECTION `GET  IN TOUCH` ################*/
 .sectionDark {
     background-color: rgb(240, 240, 240);
@@ -67,37 +97,82 @@ form-group.forName {
     padding: 2rem;
 }
 .imgCenter {
+	
     display: block;
     margin: auto;
 }
 .btnCenter {
-    display: block;
+    display: block !important;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 20px;
     width: 50%;
     
 }
-/*############## CUSTOM STYLES FOR FOOTER ################*/
+/*############## CUSTOM STYLES FOR FOOTER AND FONT AWESOME ICONS ################*/
 .contact {
 	color: #ffffff;
 	margin: auto;
 	padding auto;
 }
-.fa {
-    margin: 10px;
-}
 .fa-github-square {
+	margin: 10px;
     color: #ffffff;
 }
 .fa-stack-overflow {
+	margin: 10px;
     color: #fbb117;
+
 }
-.fa-youtube-square {
-    color: #FF0000;
+
+.fa-ubuntu {
+	vertical-align: bottom;
+	margin: 10px;
 }
+.fa-vaadin {
+	color: #00b4f0;
+	margin: 10px;
+	
+}
+.fa-java {
+	color: #ff9900;
+	margin: 10px;
+	
+}
+.fa-github {
+	color: black;
+	margin: 10px;
+}
+.fa-docker {
+	color: white;
+	margin: 10px;
+}
+.fa-ubuntu {
+	color: #ffa333;
+	margin: 10px;
+}
+
 .socialWrapper {
+	margin: 10px;
     margin: auto;
+} 
+.fa-windows {
+	color: #82c91e;
+	margin: 10px;
+}
+.fa-server {
+	color: #be4bdb;
+	margin: 10px;
+}
+.fa-network-wired {
+	
+	margin: 10px;
+}
+.developer-awesome {
+	text-align: center;
+}
+.footer-font-icons {
+	text-align: right;
 }
 
 

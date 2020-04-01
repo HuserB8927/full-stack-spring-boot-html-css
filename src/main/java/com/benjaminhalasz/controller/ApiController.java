@@ -1,10 +1,17 @@
 package com.benjaminhalasz.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -44,9 +51,13 @@ public class ApiController {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
-	
+
 	@RequestMapping("/")
-	public String home() {
+	public String home(Model  model) {
+		
+		model.addAttribute("serverTime", new Date());
+		model.addAttribute("programming", "Programming skills");
+		model.addAttribute("itskills", "IT skills");
 		return "index";
 	}
 	
@@ -71,7 +82,7 @@ public class ApiController {
 		return "auth/login?activationsuccess";
 	}
 	
-
+	
 	@RequestMapping("/index")
 	public String addUser(Model model) {
 		model.addAttribute("formuser", new FormUser());
@@ -89,9 +100,19 @@ public class ApiController {
 	public FormUser getFormUser()
 	{
 	    return new FormUser();
+	
+	}
+	@RequestMapping(value = "/welcome") 
+	public String wellcome() { 
+	    Authentication auth = SecurityContextHolder.getContext().getAuthentication(); 
+	    System.out.println("username: " + auth.getName()); 
+	    return "index"; 
 	}
 	
-}
+	}
+
+	
+
 
 
 	

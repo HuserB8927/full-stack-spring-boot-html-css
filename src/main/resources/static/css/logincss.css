@@ -11,6 +11,7 @@ body.signin-body {
     -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
 }
+
 img.signin-img {
     padding: 0 2rem 2rem;
     margin: auto; /*it is gonna take every extra space around the element */
@@ -27,7 +28,7 @@ form.signin-form {
     margin: auto;
 }
 button.signin-btn {
-    background-color: orangered;
+    background-color: #ff9900; /*orangered;*/
     color:white;
     width: 100%;
     margin-bottom: 1.2rem;
