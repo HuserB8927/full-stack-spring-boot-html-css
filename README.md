@@ -7,7 +7,7 @@ The app is available on Heroku: https://benjaminhalasz.herokuapp.com/login <br>
     **Username: user** <br>
     **Password: user** <br>
 
-Or you can just Create a New Account. After you create a new account the program will send you a confirmation email to activate your registration.<br>
+Or you can just Create a New Account. After you create a new account the program would normally send you a confirmation email to activate your registration. (I left the gmail username/password blank in the application.properties so you wont get an email now.)<br>
 
 After you logged in you can see my resume, my IT and programming skills, my videos and everythig that connects to these topics.
 
