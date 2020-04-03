@@ -21,9 +21,9 @@
     
     <!--CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" th:href="@{css/style.css}">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css" th:href="@{css/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css}">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap.min.css" th:href="@{css/bootstrap-4.3.1-dist/css/bootstrap.min.css}">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
@@ -41,25 +41,25 @@
             <ul class="navbar-nav">
                 <li class="nav-item active"></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/HuserB8927?tab=repositories">References</a>
+                    <a class="nav-link" href="https://github.com/HuserB8927?tab=repositories" th:text="${references}" target="_blank">references or something</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Qualifications
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${qualifications}">
+          qualification or something
         </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="pdf/systemadministrator.pdf">IT</a>
-                        <a class="dropdown-item" href="pdf/vaadin.pdf">VAADIN</a>
-                        <a class="dropdown-item" href="pdf/javase.pdf">JAVA</a>
-                        <a class="dropdown-item" href="pdf/resume.pdf">RESUME</a>
+                        <a class="dropdown-item" href="pdf/systemadministrator.pdf" th:text="${it}">Some text...</a>
+                        <a class="dropdown-item" href="pdf/vaadin.pdf" th:text="${vaadin}">Some text...</a>
+                        <a class="dropdown-item" href="pdf/javase.pdf" th:text="${java}">Some text...</a>
+                        <a class="dropdown-item" href="pdf/resume.pdf" th:text="${resume}">Some text...</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          My Project
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${myproject}">
+          Put something here that you are proud of and want to expose
         </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="pdf/modulzaro.pdf">EXAM</a>
+                        <a class="dropdown-item" href="pdf/modulzaro.pdf" th:text="${exam}">some text...</a>
                     </div>
                 </li>
             </ul>
@@ -73,11 +73,17 @@
 
     <!-- ########## SECTION /JUMBOTRON-WELCOME/ ########## -->
 
+	
     <div class="jumbotron text-center" style="margin-bottom:0">
-    Today is <span th:text="${#dates.format(serverTime, 'yyyy.MM.dd')}">Today is</span>
-    <br>
-        Logged in with <span sec:authentication="name" th:field="${name}">John Doe</span>
+    
         <h1 class="display-4">WELCOME TO MY WEBSITE</h1>
+        <div class="font-text-style">
+        Today is <span th:text="${#dates.format(serverTime, 'yyyy-MM-dd')}">Today is</span>,
+         you logged in as <span sec:authentication="name" th:field="${name}">John Doe</span>
+        with IP address: <span class="ipaddress" th:text="${yourip}">IP as: 127.0.0.1</span>
+        
+        </div>
+        
     </div>
 
     <div class="sectionLight">
@@ -88,8 +94,8 @@
 
                 
                 <div>
-                    <button class="toggle-btn" data-toggle="collapse" data-target="#demo" th:text="${programming}">some text</button>
-				<br>
+                    <button class="toggle-btn btn-outline-dark" data-toggle="collapse" data-target="#demo" th:text="${developer}">some text</button>
+				
                     <div id="demo" class="collapse">
                         <div class="developer-awesome">
 
@@ -116,8 +122,8 @@
                
                 <br>
                 <div>
-                    <button class="toggle-btn" data-toggle="collapse" data-target="#demoo" th:text="${itskills}">some text</button>
-					<br>
+                    <button class="toggle-btn btn-outline-dark" data-toggle="collapse" data-target="#demoo" th:text="${itskills}">some text</button>
+					
                     <div id="demoo" class="collapse">
 
                         <div class="developer-awesome">
@@ -126,7 +132,7 @@
                             <i class="fas fa-network-wired fa-5x"></i>
                             <i class="fab fa-ubuntu fa-5x"></i>
                         </div>
-                        <br>
+                        
                         <div class="progress">
                             <div class="progress-bar bg-success" style="width: 50%">
                                 Windows Server 2016, Virtual box, Creating and managing GPO
@@ -137,11 +143,12 @@
                             <div class="progress-bar bg-danger" style="width: 5%">
                                 Linux
                             </div>
-
+							
                         </div>
                     </div>
 
                 </div>
+                <br>
             </div>
             <div class="col"></div>
             
@@ -161,22 +168,117 @@
             <div class="col-sm-12 col-md-6">
                 <div class="row">
                     <div class="col-sm-12">
-                        <p>My name is Benjamin. I was born in 1989 and grew up in Hungary. I’ve been working in the finance and HR sector since 2015 and lived in several countries: Poland, Slovakia, Croatia and currently in South-Africa. I’ve always dealt with people in my life but a big dream of mine was becoming a Java developer. In August 2018 I purchased a Java course at the school named Studicore Ltd in Budapest that gave me a good understanding of the base concept of OOP and after six months I've created my first CRUD java program which you can find on my GitHub profile under my References.
+                        <p>My name is Benjamin. I was born in 1989 and grew up in Hungary. 
+                        I’ve been working in the finance- and HR sector since 2015 and lived in several countries: Poland, Slovakia, 
+                        Croatia and currently in South-Africa. I’ve always dealt with people in my life but a big dream of mine was becoming a Java developer creating real value. 
+                        In August 2018 I purchased a Java course at the school named Studicore Ltd in Budapest that gave me a good understanding of the base 
+                        concept of OOP and after six months of really hard work I'd created my first CRUD java program which you can find on my GitHub profile under my References.
                         </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-9">
-                        <p>On the other hand, I've been programming each and every day, doing Codewars challenges, practising Spring Boot and Vaadin framework and I'd like to start working in an environment where I can improve myself and learn how to code more efficiently, I want to learn coding tricks and improve my base knowledge. If you believe that we can work together and you can teach me then don't hesitate to click on the "Get in touch" button below. </p>
+                        <p>I've been programming every day, doing Codewars challenges in my spare time, practising Spring 
+                        Boot and Vaadin framework and I'd like to start working in an environment where I can improve myself as a junior developer soaking up strong experience. 
+                        I want to learn coding tricks and improve my base knowledge.<br><br>
+                        On the top of that, I signed up for a 4 months long System Administrator course in November 2019 where I acquired the followings: </p>
                     </div>
                     <div class="col-sm-12 col-md-3">
                         <img class="img-fluid" src="images/brain.png">
                     </div>
+                    
                 </div>
             </div>
             <div class="col"></div>
             <!--this is col-3 in this case-->
         </div>
+        <!-- ########## SECTION /IT SKILLS TABLE ########### -->
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-bordered">
+    <thead>
+    	<thead class="thead-dark">
+      <tr>
+        <th>Network Operating System and Cloud Services</th>
+        <th>In Detail</th>
+        <th>Score (1-5)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-primary">
+        <td>Linux</td>
+        <td>Deploying, Partitions, TCP/IP addressing and subnetting basics, Network settings</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>DHCP</td>
+        <td></td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Apache</td>
+        <td>Configuration of VirtualHosts, html files</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>FTP</td>
+        <td>"jail"</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>SSH</td>
+        <td>Deploying</td>
+        <td>5</td>
+      </tr>
+      <tr class="table-primary">    
+        <td>Windows Server 2016</td>
+        <td>Deploying, Machine name, IPv4 addresses</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Active Directory</td>
+        <td>Domain controller and basic settings</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>DNS</td>
+        <td>HOST, CNAME, A</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>File sharing</td>
+        <td>Directory sharing, permissions</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Group Policy</td>
+        <td>Common settings</td>
+        <td>5</td>
+      </tr>
+      <tr>
+      </tr>
+    </tbody>
+  </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-9">
+                        <p>If you believe that we can work together and you can "mentor" 
+                        me then don't hesitate to click on the "Get in touch" button below. </p>
+                    </div>
+                    <div class="col-sm-12 col-md-3">
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col"></div>
+            <!--this is col-3 in this case-->
+        </div>
+        
+        <!-- ##########SECTION GET IN TOUCH INSIDE SECTION /MY NAME IS BENJAMIN...########## -->
         <div class="row">
             <div class="col-sm-12">
                 <!--takes the whole place-->

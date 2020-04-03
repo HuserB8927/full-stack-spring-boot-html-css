@@ -56,8 +56,17 @@ public class ApiController {
 	public String home(Model  model) {
 		
 		model.addAttribute("serverTime", new Date());
-		model.addAttribute("programming", "Programming skills");
+		model.addAttribute("developer", "Developer skills");
 		model.addAttribute("itskills", "IT skills");
+		model.addAttribute("references", "References");
+		model.addAttribute("qualifications", "Qualifications");
+		model.addAttribute("myproject", "My Project");
+		model.addAttribute("it", "IT");
+		model.addAttribute("vaadin", "VAADIN");
+		model.addAttribute("java", "JAVA");
+		model.addAttribute("resume", "RESUME");
+		model.addAttribute("exam", "EXAM");
+		model.addAttribute("yourip", userService.userIpAddress());
 		return "index";
 	}
 	

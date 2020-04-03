@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +14,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.benjaminhalasz.model.FormUser;
 import com.benjaminhalasz.model.Role;
@@ -104,6 +108,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		
 	}
 
+	@Override
+	public String userIpAddress() {
+		
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		return request.getLocalAddr();
+	}
 	
-
 }

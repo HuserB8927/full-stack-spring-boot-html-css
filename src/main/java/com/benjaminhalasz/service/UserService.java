@@ -13,6 +13,11 @@ public interface UserService {
 
 	public String userActivation(String code);
 
+	public String userIpAddress();
+
+	
+	
+
 
 
 	
