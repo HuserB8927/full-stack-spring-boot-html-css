@@ -28,305 +28,362 @@
 </head>
 
 <body>
-<div class="main-container">
-    <!-- ########## MENU BAR ########## -->
+    <div class="main-container">
+        <!-- ########## MENU BAR ########## -->
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-        <a class="navbar-brand" href="#">MENU</a>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+            <a class="navbar-brand" href="#">MENU</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active"></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/HuserB8927?tab=repositories" th:text="${references}" target="_blank">references or something</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${qualifications}">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/HuserB8927?tab=repositories" th:text="${references}" target="_blank">references or something</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${qualifications}">
           qualification or something
         </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="pdf/systemadministrator.pdf" th:text="${it}">Some text...</a>
-                        <a class="dropdown-item" href="pdf/vaadin.pdf" th:text="${vaadin}">Some text...</a>
-                        <a class="dropdown-item" href="pdf/javase.pdf" th:text="${java}">Some text...</a>
-                        <a class="dropdown-item" href="pdf/resume.pdf" th:text="${resume}">Some text...</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${myproject}">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="pdf/systemadministrator.pdf" th:text="${it}">Some text...</a>
+                            <a class="dropdown-item" href="pdf/vaadin.pdf" th:text="${vaadin}">Some text...</a>
+                            <a class="dropdown-item" href="pdf/javase.pdf" th:text="${java}">Some text...</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${myproject}">
           Put something here that you are proud of and want to expose
         </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="pdf/modulzaro.pdf" th:text="${exam}">some text...</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="pdf/modulzaro.pdf" th:text="${exam}">some text...</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
             <form th:action="@{/logout}" method="post">
                 <input class="button-logout" type="submit" value="Log Out" />
             </form>
-        
-    </nav>
 
-    <!-- ########## SECTION /JUMBOTRON-WELCOME/ ########## -->
+        </nav>
+        <!-- ##########  SECTION DARK ######################## -->
 
-	
-    <div class="jumbotron text-center" style="margin-bottom:0">
-    
-        <h1 class="display-4">WELCOME TO MY WEBSITE</h1>
-        <div class="font-text-style">
-        Today is <span th:text="${#dates.format(serverTime, 'yyyy-MM-dd')}">Today is</span>,
-         you logged in as <span sec:authentication="name" th:field="${name}">John Doe</span>
-        with IP address: <span class="ipaddress" th:text="${yourip}">IP as: 127.0.0.1</span>
-        
-        </div>
-        
-    </div>
-
-    <div class="sectionLight">
-        <div class="row">
-
-		<div class="col"></div>
-            <div class="col-sm-8">
-
-                
-                <div>
-                    <button class="toggle-btn btn-outline-dark" data-toggle="collapse" data-target="#demo" th:text="${developer}">some text</button>
-				
-                    <div id="demo" class="collapse">
-                        <div class="developer-awesome">
-
-                            <i class="fab fa-vaadin fa-5x"></i>
-                            <i class="fab fa-java fa-5x"></i>
-                            <i class="fab fa-github fa-5x"></i>
-                            <i class="fab fa-docker fa-5x"></i>
-                        </div>
-                        <br>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" style="width: 15%">
-                                Vaadin
-                            </div>
-                            <div class="progress-bar bg-success" style="width:55%">
-                                Java, Spring Boot, HTML, CSS
-                            </div>
-                            <div class="progress-bar bg-warning" style="width: 30%">
-                                Github, Docker
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-               
-                <br>
-                <div>
-                    <button class="toggle-btn btn-outline-dark" data-toggle="collapse" data-target="#demoo" th:text="${itskills}">some text</button>
-					
-                    <div id="demoo" class="collapse">
-
-                        <div class="developer-awesome">
-                            <i class="fab fa-windows fa-5x"></i>
-                            <i class="fas fa-server fa-5x"></i>
-                            <i class="fas fa-network-wired fa-5x"></i>
-                            <i class="fab fa-ubuntu fa-5x"></i>
-                        </div>
+        <section class="banner-container">
+            <div class="container">
+                <div class="row-dark">
+                    <div class="col-1"></div>
+                    <div class="col-6">
+                        <h1 class="home-title">Welcome to my website</h1>
+                        <p class="b-text">This landing page has been created as a reference. 
+                        It uses HTML/CSS and a little bit of Javascript on the frontend and Spring Boot on the backend. 
+                        My application uses postgreSql database storing login details and ThymeLeaf is the tech which helps 
+                        in the communication delivering data between the front- and the backend
                         
-                        <div class="progress">
-                            <div class="progress-bar bg-success" style="width: 50%">
-                                Windows Server 2016, Virtual box, Creating and managing GPO
+                        <span id="dots">...</span><span id="more"><br><br>If you scroll down you can see
+            			my experiences in the field of developing and IT. <br><br>If you click on the `Get in touch` button 
+            			you can type your details that I will be
+            			notified about and I will send you my CV.</span></p>
+
+                        <button class="btn btn-dark" onclick="myFunction()" id="myBtn">Read more</button>
+
+                        <script type="text/javascript">
+                            function myFunction() {
+                                var dots = document.getElementById("dots");
+                                var moreText = document.getElementById("more");
+                                var btnText = document.getElementById("myBtn");
+
+                                if (dots.style.display === "none") {
+                                    dots.style.display = "inline";
+                                    btnText.innerHTML = "Read more";
+                                    moreText.style.display = "none";
+                                } else {
+                                    dots.style.display = "none";
+                                    btnText.innerHTML = "Read less";
+                                    moreText.style.display = "inline";
+                                }
+                            }
+                        </script>
+
+                    </div>
+                    <div class="col-4">
+                        <div class="b-card">
+                            <div class="font-text-style">
+                                Today is <span th:text="${#dates.format(serverTime, 'yyyy-MM-dd')}">Today is</span>
                             </div>
-                            <div class="progress-bar bg-warning" style="width: 45%">
-                                Modelling Network Architecture, basic system administrator tasks
+                            <div class="b-video">
+                                <img class="b-video-img space" src="images/ben.png" alt="" />
                             </div>
-                            <div class="progress-bar bg-danger" style="width: 5%">
-                                Linux
+                            <p class="card-text">
+                                Email: h.benya@gmail.com
+                                <br> Tel.: +3630/786-9153
+                            </p>
+                            <div class="card-btn">
+                                <a class="btn btn-primary buy-btn-lg" href="pdf/resume.pdf" th:text="${resume}">Some text...</a>
                             </div>
-							
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ########## SECTION /JUMBOTRON-WELCOME/ ########## -->
+
+        <div class="jumbotron text-center" style="margin-bottom:0">
+
+            <div class="b-title">
+
+                You logged in as <span sec:authentication="name" th:field="${name}">John Doe</span> and your IP address is <span class="ipaddress" th:text="${yourip}">IP as: 127.0.0.1</span>
+
+            </div>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-6 offset-md-3">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Network Operating System and Cloud Services</th>
+                                    <th>In Detail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-primary">
+                                    <td>Linux</td>
+                                    <td>Deploying, Partitions, TCP/IP addressing and subnetting basics, Network settings</td>
+                                </tr>
+                                <tr>
+                                    <td>DHCP</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Apache</td>
+                                    <td>Configuration of VirtualHosts, html files</td>
+                                </tr>
+                                <tr>
+                                    <td>FTP</td>
+                                    <td>"jail"</td>
+                                </tr>
+                                <tr>
+                                    <td>SSH</td>
+                                    <td>Deploying</td>
+                                </tr>
+                                <tr class="table-primary">
+                                    <td>Windows Server 2016</td>
+                                    <td>Deploying, Machine name, IPv4 addresses</td>
+                                </tr>
+                                <tr>
+                                    <td>Active Directory</td>
+                                    <td>Domain controller and basic settings</td>
+                                </tr>
+                                <tr>
+                                    <td>DNS</td>
+                                    <td>HOST, CNAME, A</td>
+                                </tr>
+                                <tr>
+                                    <td>File sharing</td>
+                                    <td>Directory sharing, permissions</td>
+                                </tr>
+                                <tr>
+                                    <td>Group Policy</td>
+                                    <td>Common settings</td>
+                                </tr>
+                                <tr>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sectionLight">
+            <div class="row">
+
+                <div class="col"></div>
+                <div class="col-sm-8">
+
+                    <div>
+                        <button class="toggle-btn btn-outline-dark toggle-btn-ownstyle" data-toggle="collapse" data-target="#demo" th:text="${developer}">some text</button>
+
+                        <div id="demo" class="collapse">
+                            <div class="developer-awesome">
+
+                                <i class="fab fa-vaadin fa-5x"></i>
+                                <i class="fab fa-java fa-5x"></i>
+                                <i class="fab fa-github fa-5x"></i>
+                                <i class="fab fa-docker fa-5x"></i>
+                            </div>
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" style="width: 15%">
+                                    Vaadin
+                                </div>
+                                <div class="progress-bar bg-success" style="width:55%">
+                                    Java, Spring Boot, HTML, CSS
+                                </div>
+                                <div class="progress-bar bg-warning" style="width: 30%">
+                                    Github, Docker
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
-                </div>
-                <br>
-            </div>
-            <div class="col"></div>
-            
-          </div>
-	 </div>
-        
+                    <br>
+                    <div>
+                        <button class="toggle-btn btn-outline-dark toggle-btn-ownstyle" data-toggle="collapse" data-target="#demoo" th:text="${itskills}">some text</button>
 
-    <!-- ########## SECTION /MY NAME IS BENJAMIN/ ########## -->
-    <div class="sectionDark">
-        <div class="row">
-            <div class="col-sm-12 col-md-1 offset-md-2"></div>
-            <!--offset means adding empty space of two columns wide to the left of this. BTW, md-1 plus md-2 is a col-3 -->
-            <div class="col-sm -12 col-md-1 ">
-                <img class="img-fluid" src="images/hexagon.png">
-            </div>
+                        <div id="demoo" class="collapse">
 
-            <div class="col-sm-12 col-md-6">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <p>My name is Benjamin. I was born in 1989 and grew up in Hungary. 
-                        I’ve been working in the finance- and HR sector since 2015 and lived in several countries: Poland, Slovakia, 
-                        Croatia and currently in South-Africa. I’ve always dealt with people in my life but a big dream of mine was becoming a Java developer creating real value. 
-                        In August 2018 I purchased a Java course at the school named Studicore Ltd in Budapest that gave me a good understanding of the base 
-                        concept of OOP and after six months of really hard work I'd created my first CRUD java program which you can find on my GitHub profile under my References.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-9">
-                        <p>I've been programming every day, doing Codewars challenges in my spare time, practising Spring 
-                        Boot and Vaadin framework and I'd like to start working in an environment where I can improve myself as a junior developer soaking up strong experience. 
-                        I want to learn coding tricks and improve my base knowledge.<br><br>
-                        On the top of that, I signed up for a 4 months long System Administrator course in November 2019 where I acquired the followings: </p>
-                    </div>
-                    <div class="col-sm-12 col-md-3">
-                        <img class="img-fluid" src="images/brain.png">
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="col"></div>
-            <!--this is col-3 in this case-->
-        </div>
-        <!-- ########## SECTION /IT SKILLS TABLE ########### -->
-        <div class="row">
-            <div class="col-sm-12 col-md-6 offset-md-3">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table table-bordered">
-    <thead>
-    	<thead class="thead-dark">
-      <tr>
-        <th>Network Operating System and Cloud Services</th>
-        <th>In Detail</th>
-        <th>Score (1-5)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-primary">
-        <td>Linux</td>
-        <td>Deploying, Partitions, TCP/IP addressing and subnetting basics, Network settings</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>DHCP</td>
-        <td></td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Apache</td>
-        <td>Configuration of VirtualHosts, html files</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>FTP</td>
-        <td>"jail"</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>SSH</td>
-        <td>Deploying</td>
-        <td>5</td>
-      </tr>
-      <tr class="table-primary">    
-        <td>Windows Server 2016</td>
-        <td>Deploying, Machine name, IPv4 addresses</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Active Directory</td>
-        <td>Domain controller and basic settings</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>DNS</td>
-        <td>HOST, CNAME, A</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>File sharing</td>
-        <td>Directory sharing, permissions</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Group Policy</td>
-        <td>Common settings</td>
-        <td>5</td>
-      </tr>
-      <tr>
-      </tr>
-    </tbody>
-  </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-9">
-                        <p>If you believe that we can work together and you can "mentor" 
-                        me then don't hesitate to click on the "Get in touch" button below. </p>
-                    </div>
-                    <div class="col-sm-12 col-md-3">
-                       
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="col"></div>
-            <!--this is col-3 in this case-->
-        </div>
-        
-        <!-- ##########SECTION GET IN TOUCH INSIDE SECTION /MY NAME IS BENJAMIN...########## -->
-        <div class="row">
-            <div class="col-sm-12">
-                <!--takes the whole place-->
-                <div class="coolStuffWrapper">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-lg coolStuffBtn" data-toggle="modal" data-target="#coolStuffModal">Get in touch</button>
-                    <!--the data-toggle is going to triggle the modal and then the data-target which is actually going to call on it-->
+                            <div class="developer-awesome">
+                                <i class="fab fa-windows fa-5x"></i>
+                                <i class="fas fa-server fa-5x"></i>
+                                <i class="fas fa-network-wired fa-5x"></i>
+                                <i class="fab fa-ubuntu fa-5x"></i>
+                            </div>
 
+                            <div class="progress">
+                                <div class="progress-bar bg-success" style="width: 50%">
+                                    Windows Server 2016, Virtual box, Creating and managing GPO
+                                </div>
+                                <div class="progress-bar bg-warning" style="width: 45%">
+                                    Modelling Network Architecture, basic system administrator tasks
+                                </div>
+                                <div class="progress-bar bg-danger" style="width: 5%">
+                                    Linux
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                 </div>
+                <div class="col"></div>
+
             </div>
         </div>
-    </div>
-    
-    
-    <!-- ########## SECTION /VIDEOS CONNECTIONS TO MODELS/ ########## -->
-    <div class="sectionLight">
+
+        <!-- ########## SECTION /MY NAME IS BENJAMIN/ ########## -->
+        <div class="sectionDark">
+            <div class="row">
+                <div class="col-sm-12 col-md-1 offset-md-2"></div>
+                <!--offset means adding empty space of two columns wide to the left of this. BTW, md-1 plus md-2 is a col-3 -->
+                <div class="col-sm -12 col-md-1 ">
+                    <img class="img-fluid" src="images/hexagon.png">
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>My name is Benjamin. I was born in 1989 and grew up in Hungary. I’ve been working in the finance- and HR sector since 2015 and lived in several countries: Poland, Slovakia, Croatia and currently in South-Africa. I’ve always dealt with people in my life but a big dream of mine was becoming a Java developer creating real value. In 2018 I finished a Java course at the school named Studicore Ltd in Budapest that gave me a good understanding of the base concept of OOP and I'd created a simple CRUD java program which you can find on my GitHub profile under my References.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-9">
+                            <p>I've been programming every day, doing Codewars challenges in my spare time, practising Spring Boot and Vaadin framework and I'd like to start working in an environment where I can improve myself as a junior developer soaking up strong experience. I want to learn coding tricks and improve my base knowledge using it in the deep water.
+                                <br>
+                                <br> On the top of that, I signed up for a System Administrator course in 2019 where I have learnt about Network Operating System and Cloud Services. </p>
+                        </div>
+                        <div class="col-sm-12 col-md-3">
+                            <img class="img-fluid" src="images/brain.png">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col"></div>
+                <!--this is col-3 in this case-->
+            </div>
+            <!-- ########## SECTION /IT SKILLS TABLE ########### -->
+
+            <!-- ##########SECTION GET IN TOUCH INSIDE SECTION /MY NAME IS BENJAMIN...########## -->
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-4">
-                            <img class="img-fluid imgCenter" src="images/square.png">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <button type="button" class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".square-modal-lg">Prime</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4">
-                            <img class="img-fluid imgCenter" src="images/fibo.png">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <button type="button" class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".fibo-modal-lg">Fibo</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4">
-                            <img class="img-fluid imgCenter" src="images/square_copy.png">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <button type="button" class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".prime-modal-lg">Square</button>
-                                </div>
-                            </div>
-                        </div>
+                    <!--takes the whole place-->
+                    <div class="coolStuffWrapper">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-lg coolStuffBtn" data-toggle="modal" data-target="#coolStuffModal">Get in touch</button>
+                        <!--the data-toggle is going to triggle the modal and then the data-target which is actually going to call on it-->
+
                     </div>
                 </div>
             </div>
         </div>
-        
+
+        <!-- ########## SECTION /VIDEOS CONNECTIONS TO MODELS/ ########## -->
+        <section class="banner-container">
+            <div class="container">
+                <div class="row-dark">
+
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-4">
+                                <div class="b-card">
+
+                                    <div class="b-video">
+                                        <img class="img-fluid imgCenter" src="images/square.png">
+                                    </div>
+                                    <p class="card-text"><br>Prime or not?</p>
+                                    <div class="card-btn">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <button type="button" class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".square-modal-lg">Click</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-4">
+                                <div class="b-card">
+
+                                    <div class="b-video">
+                                        <img class="img-fluid imgCenter" src="images/fibo.png">
+                                    </div>
+                                    <p class="card-text"><br>Fibonacci-sequence</p>
+                                    <div class="card-btn">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <button type="button" class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".fibo-modal-lg">Click</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-4">
+                                <div class="b-card">
+
+                                    <div class="b-video">
+                                        <img class="img-fluid imgCenter" src="images/square_copy.png">
+                                    </div>
+                                    <p class="card-text"><br>Is the number square?</p>
+                                    <div class="card-btn">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <button type="button" class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".prime-modal-lg">Click</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- ########## SECTION /GET IN TOUCH/ ########## -->
     <!-- Modal -->
 
@@ -379,10 +436,10 @@
             </div>
         </div>
     </div>
-</div>
 
     <!-- ########## SECTION /VIDEOS/ ########## -->
     <!--More info Modal 1-->
+
     <div class="modal fade square-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
