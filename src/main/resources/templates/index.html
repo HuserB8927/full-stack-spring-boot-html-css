@@ -1,6 +1,7 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org"
-        xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorator="layouts/main">
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 
 <head>
@@ -32,7 +33,7 @@
         <!-- ########## MENU BAR ########## -->
 
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-            <a class="navbar-brand" href="#">MENU</a>
+           <a class="navbar-brand" href="#">MENU</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -111,13 +112,16 @@
                     </div>
                     <div class="col-4">
                         <div class="b-card">
-                            <div class="font-text-style">
-                                Today is <span th:text="${#dates.format(serverTime, 'yyyy-MM-dd')}">Today is</span>
+                        <div>
+                        Today is <span th:text="${#dates.format(serverTime, 'yyyy-MM-dd')}">Today is</span></div><br>
+                            <div class="video-title">
+                                <p>Benjamin Halász
                             </div>
+                            
                             <div class="b-video">
                                 <img class="b-video-img space" src="images/ben.png" alt="" />
                             </div>
-                            <p class="card-text">
+                            <p class="card-text font-style">
                                 Email: h.benya@gmail.com
                                 <br> Tel.: +3630/786-9153
                             </p>
@@ -332,7 +336,7 @@
                                     <div class="b-video">
                                         <img class="img-fluid imgCenter" src="images/square.png">
                                     </div>
-                                    <p class="card-text"><br>Prime or not?</p>
+                                    <p class="card-text font-style"><br>Prime or not?</p>
                                     <div class="card-btn">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -349,7 +353,7 @@
                                     <div class="b-video">
                                         <img class="img-fluid imgCenter" src="images/fibo.png">
                                     </div>
-                                    <p class="card-text"><br>Fibonacci-sequence</p>
+                                    <p class="card-text font-style"><br>Fibonacci-sequence</p>
                                     <div class="card-btn">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -366,7 +370,7 @@
                                     <div class="b-video">
                                         <img class="img-fluid imgCenter" src="images/square_copy.png">
                                     </div>
-                                    <p class="card-text"><br>Is the number square?</p>
+                                    <p class="card-text font-style"><br>Is the number square?</p>
                                     <div class="card-btn">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -474,12 +478,13 @@
     </div>
 
     <!--FOOTER-->
+    
     <footer class="footer bg-dark">
         <!--we can put here our own container-->
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-lg-3 socialWrapper">
-                    <p class="contact">Email: h.benya@gmail.com
+                    <p class="contact font-style">Email: h.benya@gmail.com
                         <br>Phone: +3630/786-9153</p>
                 </div>
                 <div class="col-sm-12 col-lg-9 footer-font-icons">

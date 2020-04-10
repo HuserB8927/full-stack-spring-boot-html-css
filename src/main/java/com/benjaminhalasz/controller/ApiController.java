@@ -70,9 +70,18 @@ public class ApiController {
 		return "index";
 	}
 	
+	@RequestMapping("/login")
+	public String login(Model model) {
+		model.addAttribute("serverTime", new Date());
+		model.addAttribute("yourip", userService.userIpAddress());
+		return "auth/login";
+	}
+	
 	@RequestMapping("/registration")
 	public String registration(Model model) {
 		model.addAttribute("user", new User());
+		model.addAttribute("serverTime", new Date());
+		model.addAttribute("yourip", userService.userIpAddress());
 		return "registration";
 	}
 	//@RequestMapping(value="/reg", method=RequestMethod.POST)

@@ -1,7 +1,10 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	
+	lang="en" layout:decorate="~{layouts/main}">
 
 <head>
     <!-- Required meta tags -->
@@ -20,7 +23,9 @@
     <head>
 
     <body class="signin-body">
-        <div class="container signin-container">
+    
+    
+        <div class="container signin-container" layout:fragment="content">
             <div class="row">
                 <div class="col"></div>
                 <div class="col-sm-12 col-md-8">
@@ -52,7 +57,16 @@
             </div>
         <div class="col"></div>
     </div>
+    <footer class="text-center footer bg-dark">
+		<div class="font-style">
+        <div>
+        Today is <span th:text="${#dates.format(serverTime, 'yyyy-MM-dd')}">Today is</span></div>
+        <br>Your IP address is <span class="ipaddress" th:text="${yourip}">your ip</span>
+        
+        </div>
+		</footer>	
 </div>
+
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

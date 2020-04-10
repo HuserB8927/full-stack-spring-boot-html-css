@@ -14,7 +14,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @EnableGlobalMethodSecurity(securedEnabled=true)
@@ -24,7 +26,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 	
 	String[] staticResources  =  {
 	        "/css/**",
-	        "/images/**"
+	        "/layouts/main"
 	        
 	    };
 	
@@ -41,7 +43,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 		this.userService = userService;
 	}
 	@Autowired
-	public void configureAuth(AuthenticationManagerBuilder auth) {
+	public void configureAuth(AuthenticationManagerBuilder auth) { //doesn't seem to be working, investigate!
 		
 		try {
 			auth
@@ -55,7 +57,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Override
-    public void configure(WebSecurity web) {
+    public void configure(WebSecurity web) { //doesn't seem to be working, investigate!
         web
             .ignoring()
             .antMatchers(staticResources);
@@ -72,10 +74,10 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 				.antMatchers(staticResources).permitAll()
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 				.antMatchers("/admin/**").hasRole("ADMIN")
-				//.antMatchers("/").permitAll()
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/reg").permitAll()
-				.antMatchers("/log").permitAll()
+				.antMatchers("/main").permitAll()
+				.antMatchers("/login").permitAll()
 				.antMatchers("/addUser").permitAll()
 				.anyRequest().authenticated()
 			.and()
@@ -110,5 +112,5 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
     }
     
     
-	
+    
 }

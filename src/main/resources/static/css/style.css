@@ -1,5 +1,6 @@
 .banner-container {
   padding: 40px 0;
+  padding-right: 50px;
   background-color: #212630;
   color: #fff; 
   
@@ -78,8 +79,16 @@
   margin: 0 30px 40px;
   vertical-align: middle; }
 
-
-
+.video-title {
+	font-size: 20px;
+  font-weight: 700;
+  color: white; 
+}
+.font-style {
+	font-size: 15px;
+  font-weight: 700;
+  color: white;
+}
 
 
 
@@ -93,6 +102,7 @@
 	max-width: 100%;
 	
 }
+
 .container {
 	max-width: 100%
 }
@@ -112,7 +122,8 @@
   	cursor: pointer;
   	-webkit-border-radius: 7px;   
 }
-#more {display: none;}
+#more {display: none;
+}
 
 
 /*############## CUSTOM STYLES FOR WELCOME BLOCK ################*/
@@ -206,6 +217,8 @@ form-group.forName {
     width: 50%;
     
 }
+
+
 /*############## CUSTOM STYLES FOR FOOTER AND FONT AWESOME ICONS ################*/
 .contact {
 	color: #ffffff;
