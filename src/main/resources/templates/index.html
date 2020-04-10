@@ -84,8 +84,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                         My application uses postgreSql database storing login details and ThymeLeaf is the tech which helps 
                         in the communication delivering data between the front- and the backend
                         
-                        <span id="dots">...</span><span id="more"><br><br>If you scroll down you can see
-            			my experiences in the field of developing and IT. <br><br>If you click on the `Get in touch` button 
+                        <span id="dots">...</span><span id="more"><br> <br><br>If you click on the `Get in touch` button 
             			you can type your details that I will be
             			notified about and I will send you my CV.</span></p>
 
@@ -112,8 +111,6 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                     </div>
                     <div class="col-4">
                         <div class="b-card">
-                        <div>
-                        Today is <span th:text="${#dates.format(serverTime, 'yyyy-MM-dd')}">Today is</span></div><br>
                             <div class="video-title">
                                 <p>Benjamin Halász
                             </div>
@@ -139,9 +136,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
         <div class="jumbotron text-center" style="margin-bottom:0">
 
-            <div class="b-title">
+            <div class="b-title font-style-two">
 
-                You logged in as <span sec:authentication="name" th:field="${name}">John Doe</span> and your IP address is <span class="ipaddress" th:text="${yourip}">IP as: 127.0.0.1</span>
+                Hello <span sec:authentication="name" th:field="${name}">John Doe</span>, please find my IT specialization below
 
             </div>
             <br>
