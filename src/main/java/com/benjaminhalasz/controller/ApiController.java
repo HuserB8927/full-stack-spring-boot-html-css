@@ -65,7 +65,7 @@ public class ApiController {
 		model.addAttribute("vaadin", "VAADIN");
 		model.addAttribute("java", "JAVA");
 		model.addAttribute("resume", "RESUME");
-		model.addAttribute("exam", "EXAM");
+		model.addAttribute("exam", "EXAM 🇭🇺");
 		model.addAttribute("yourip", userService.userIpAddress());
 		return "index";
 	}

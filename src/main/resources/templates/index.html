@@ -26,6 +26,8 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css" th:href="@{css/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css}">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap.min.css" th:href="@{css/bootstrap-4.3.1-dist/css/bootstrap.min.css}">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <title>Welcome to my website</title>
 </head>
 
 <body>
@@ -82,11 +84,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                         <p class="b-text">This landing page has been created as a reference. 
                         It uses HTML/CSS and a little bit of Javascript on the frontend and Spring Boot on the backend. 
                         My application uses postgreSql database storing login details and ThymeLeaf is the tech which helps 
-                        in the communication delivering data between the front- and the backend
-                        
-                        <span id="dots">...</span><span id="more"><br> <br><br>If you click on the `Get in touch` button 
+                        in the communication delivering data between the front- and the backend.
+                        <span id="dots">..</span><span id="more"> <br><br>If you click on the `Get in touch` button down below my IT speciaslizations
             			you can type your details that I will be
-            			notified about and I will send you my CV.</span></p>
+            			notified about and I can send you my CV.</span></p>
 
                         <button class="btn btn-dark" onclick="myFunction()" id="myBtn">Read more</button>
 
@@ -116,14 +117,14 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                             </div>
                             
                             <div class="b-video">
-                                <img class="b-video-img space" src="images/ben.png" alt="" />
+                                <img class="b-video-img space" src="images/ben.png" alt=""/>
                             </div>
                             <p class="card-text font-style">
                                 Email: h.benya@gmail.com
                                 <br> Tel.: +3630/786-9153
                             </p>
                             <div class="card-btn">
-                                <a class="btn btn-primary buy-btn-lg" href="pdf/resume.pdf" th:text="${resume}">Some text...</a>
+                                <a class="btn btn-primary buy-btn-lg" href="pdf/benjamin.pdf" th:text="${resume}">Some text...</a>
                             </div>
                         </div>
                     </div>
@@ -441,15 +442,31 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     <!-- ########## SECTION /VIDEOS/ ########## -->
     <!--More info Modal 1-->
 
-    <div class="modal fade square-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade square-modal-lg" tabindex="-1" role="dialog" data-toggle="modal" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Scf2He55pus" allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item myId" src="https://www.youtube.com/embed/Scf2He55pus" allowfullscreen></iframe>
+                    <script type="text/javascript">
+    $('.listen-example').click(function(){ 
+        $('.modal-pop1').fadeIn();
+        $("#myid").attr('src','//www.youtube.com/embed/Scf2He55pus');
+    });
+
+    $('.modal_bg, .modal_button').click(function() {
+        $('.modal-pop').fadeOut();
+        $("#myid").attr('src','');
+    });
+    </script>
                 </div>
             </div>
         </div>
     </div>
+  
+    
+    
+    
+    
     <!--More info Modal 2-->
     <!--We just need to change the name of the class and paste the code from above-->
     <div class="modal fade fibo-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
