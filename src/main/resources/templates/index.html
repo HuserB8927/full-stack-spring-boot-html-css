@@ -31,6 +31,11 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 </head>
 
 <body>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="css/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <div class="main-container">
         <!-- ########## MENU BAR ########## -->
 
@@ -338,7 +343,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                                     <div class="card-btn">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <button type="button" class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".square-modal-lg">Click</button>
+                                                <button id="myBtn" type="button" class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".square-modal-lg">Click</button>
+                                                
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -442,27 +449,29 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     <!-- ########## SECTION /VIDEOS/ ########## -->
     <!--More info Modal 1-->
 
-    <div class="modal fade square-modal-lg" tabindex="-1" role="dialog" data-toggle="modal" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div  class="modal fade square-modal-lg" id="myModal" tabindex="-1" role="dialog" data-toggle="modal" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
+            	<div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item myId" src="https://www.youtube.com/embed/Scf2He55pus" allowfullscreen></iframe>
-                    <script type="text/javascript">
-    $('.listen-example').click(function(){ 
-        $('.modal-pop1').fadeIn();
-        $("#myid").attr('src','//www.youtube.com/embed/Scf2He55pus');
-    });
-
-    $('.modal_bg, .modal_button').click(function() {
-        $('.modal-pop').fadeOut();
-        $("#myid").attr('src','');
-    });
-    </script>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Scf2He55pus" allowfullscreen></iframe>
                 </div>
+                
             </div>
         </div>
     </div>
-  
+  </div>
+  <script type="text/javascript">
+  //empty iframe src first and then set it up again
+  $('.modal').on('hidden.bs.modal', function () {
+    var src = $(this).find('.embed-responsive-item').attr('src');
+    $(this).find('.embed-responsive-item').attr('src', '');
+    $(this).find('.embed-responsive-item').attr('src', src);
+});
+ 	</script>
+     
+     
     
     
     
@@ -513,11 +522,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
     </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="css/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    
+    
+    
+    
 </body>
 
 </html>
