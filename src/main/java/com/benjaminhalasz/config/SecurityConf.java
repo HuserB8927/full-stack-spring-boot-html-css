@@ -82,7 +82,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated()
 			.and()
 				.formLogin()
-				.loginPage("/").permitAll()
+				.loginPage("/").permitAll() // for now I just want to expose only my main page without a login page. For the login page I would use: /login
 				.and().rememberMe().tokenValiditySeconds(60*60*7).key("message")
 				.and()
 		.logout()
