@@ -82,7 +82,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated()
 			.and()
 				.formLogin()
-				.loginPage("/login").permitAll()
+				.loginPage("/").permitAll()
 				.and().rememberMe().tokenValiditySeconds(60*60*7).key("message")
 				.and()
 		.logout()
