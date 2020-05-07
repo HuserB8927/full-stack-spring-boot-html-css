@@ -67,35 +67,35 @@ public class ApiController {
 		return "index";
 	}
 	
-//	@RequestMapping("/login")
-//	public String login(Model model) {
-//		model.addAttribute("serverTime", new Date());
-//		model.addAttribute("yourip", userService.userIpAddress());
-//		return "auth/login";
-//	}
-//	
-//	@RequestMapping("/registration")
-//	public String registration(Model model) {
-//		model.addAttribute("user", new User());
-//		model.addAttribute("serverTime", new Date());
-//		model.addAttribute("yourip", userService.userIpAddress());
-//		return "registration";
-//	}
-//	//@RequestMapping(value="/reg", method=RequestMethod.POST)
-//	@PostMapping("/reg")
-//	public String registration(@ModelAttribute User user) {
-//		System.out.println("NEW USER");
-//		emailService.sendMessage(user.getEmail(), user.getFullName());
-//		log.info("New User");
-//		userService.registerUser(user);
-//		return "auth/login";
-//	}
-//	
-//	@RequestMapping(path = "/activation/{code}", method = RequestMethod.GET)
-//	public String activation(@PathVariable("code") String code, HttpServletResponse response) {
-//		String result = userService.userActivation(code);
-//		return "auth/login?activationsuccess";
-//	}
+	@RequestMapping("/login")
+	public String login(Model model) {
+		model.addAttribute("serverTime", new Date());
+		model.addAttribute("yourip", userService.userIpAddress());
+		return "auth/login";
+	}
+	
+	@RequestMapping("/registration")
+	public String registration(Model model) {
+		model.addAttribute("user", new User());
+		model.addAttribute("serverTime", new Date());
+		model.addAttribute("yourip", userService.userIpAddress());
+		return "registration";
+	}
+	//@RequestMapping(value="/reg", method=RequestMethod.POST)
+	@PostMapping("/reg")
+	public String registration(@ModelAttribute User user) {
+		System.out.println("NEW USER");
+		emailService.sendMessage(user.getEmail(), user.getFullName());
+		log.info("New User");
+		userService.registerUser(user);
+		return "auth/login";
+	}
+	
+	@RequestMapping(path = "/activation/{code}", method = RequestMethod.GET)
+	public String activation(@PathVariable("code") String code, HttpServletResponse response) {
+		String result = userService.userActivation(code);
+		return "auth/login?activationsuccess";
+	}
 	
 	
 	@RequestMapping("/index")
