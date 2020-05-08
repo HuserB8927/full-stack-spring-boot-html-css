@@ -71,6 +71,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 		try {
 			httpSec.authorizeRequests()
 			.antMatchers("/sw.js").permitAll()
+			.antMatchers("/pdf/benjamin.pdf").permitAll()
 			.antMatchers("/").permitAll()
 				.antMatchers(staticResources).permitAll()
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
