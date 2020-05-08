@@ -71,7 +71,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 		try {
 			httpSec.authorizeRequests()
 			.antMatchers("/sw.js").permitAll()
-			.antMatchers("/pdf/benjamin.pdf").permitAll()
+			.antMatchers("/pdf/**").permitAll()
 			.antMatchers("/").permitAll()
 				.antMatchers(staticResources).permitAll()
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
@@ -84,7 +84,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated()
 			.and()
 				.formLogin()
-				.loginPage("/login").permitAll() // for now I just want to expose only my main page without a login page. For the login page I would use: /login
+				.loginPage("/login").permitAll() 
 				.and().rememberMe().tokenValiditySeconds(60*60*7).key("message")
 				.and()
 		.logout()
