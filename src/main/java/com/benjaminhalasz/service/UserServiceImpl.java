@@ -1,7 +1,5 @@
 package com.benjaminhalasz.service;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +11,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -23,6 +20,7 @@ import com.benjaminhalasz.model.User;
 import com.benjaminhalasz.repository.FormUserRepository;
 import com.benjaminhalasz.repository.RoleRepository;
 import com.benjaminhalasz.repository.UserRepository;
+
 @Primary
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {

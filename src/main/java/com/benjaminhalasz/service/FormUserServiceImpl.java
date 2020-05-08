@@ -7,10 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.benjaminhalasz.model.FormUser;
-import com.benjaminhalasz.model.User;
 import com.benjaminhalasz.repository.FormUserRepository;
-import com.benjaminhalasz.repository.RoleRepository;
-import com.benjaminhalasz.repository.UserRepository;
 
 @Service
 public class FormUserServiceImpl implements UserDetailsService, FormUserService{

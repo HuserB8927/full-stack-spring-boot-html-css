@@ -23,16 +23,14 @@ import com.benjaminhalasz.service.EmailService;
 import com.benjaminhalasz.service.FormUserService;
 import com.benjaminhalasz.service.UserService;
 
+
+
 @Controller
 public class ApiController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private EmailService emailService;
 	private UserService userService;
 	private FormUserService formUserService;
-	
-	
-	
-	
 	
 	@Autowired
 	public void setFormUserService(FormUserService formUserService) {
@@ -64,6 +62,7 @@ public class ApiController {
 		model.addAttribute("resume", "RESUME");
 		model.addAttribute("exam", "EXAM 🇭🇺");
 		model.addAttribute("yourip", userService.userIpAddress());
+		
 		return "index";
 	}
 	
