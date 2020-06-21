@@ -5,11 +5,7 @@
   color: #fff; 
   
   }
-  .section {
-  margin-top: 50px;
-  background-color: #212630;
-  color: #fff; 
-  }
+ 
   
 .center-block, .b-video-img, .gear-img {
   display: block;
@@ -195,12 +191,7 @@
 
 
 /*############## CUSTOM STYLES FOR SECTION `GET  IN TOUCH` ################*/
-.section-skills {
-    padding: 40px 0;
-  padding-right: 50px;
-  background-color: #212630;
-  color: #fff; 
-}
+
 .coolStuffWrapper {
     margin-top: 20px;
 }
