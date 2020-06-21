@@ -16,6 +16,7 @@ public class EmailService {
 	
 	@Value("${spring.mail.username}")
 	private String MESSAGE_FROM;
+	private String MESSAGE_TO = "h.benya@gmail.com";
 	
 	@Autowired
 	public void setJavaMailSender(JavaMailSender javaMailSender) {
@@ -27,7 +28,7 @@ public class EmailService {
 		try {
 			message = new SimpleMailMessage();
 			message.setFrom(MESSAGE_FROM);
-			message.setTo(email);
+			message.setTo(MESSAGE_TO, email); //originally the argument is `email`
 			message.setSubject("Registration successful");
 			message.setText("Dear " + fullName + ", thanks for register on my website.");
 			javaMailSender.send(message);

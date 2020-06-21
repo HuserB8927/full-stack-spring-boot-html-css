@@ -51,8 +51,8 @@ public class ApiController {
 	public String home(Model  model) {
 		
 		model.addAttribute("serverTime", new Date());
-		model.addAttribute("developer", "Developer skills");
-		model.addAttribute("itskills", "IT skills");
+		model.addAttribute("developer", "Developing");
+		model.addAttribute("itskills", "IT");
 		model.addAttribute("references", "References");
 		model.addAttribute("qualifications", "Qualifications");
 		model.addAttribute("myproject", "My Project");
@@ -124,6 +124,11 @@ public class ApiController {
 	}
 	
 	}
+
+	
+
+
+
 
 	
 

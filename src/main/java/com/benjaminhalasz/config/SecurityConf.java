@@ -26,6 +26,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 	
 	String[] staticResources  =  {
 	        "/css/**",
+	        "/js/**",
 	        "/layouts/main"
 	        
 	    };

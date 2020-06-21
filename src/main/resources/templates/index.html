@@ -7,15 +7,15 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 <head>
     <!-- Required meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     
-    
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
-    
-    
-    
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+   
+    <!--  <script src="js/modal_button_form.js"></script> -->
+   
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/2dafcd6f62.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/2dafcd6f62.js" crossorigin="user"></script>
   
     <!-- Bootstrap CSS // Let's connect the CSS to the grid system -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap.min.css">
@@ -33,13 +33,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
 <body>
 <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="css/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    
     <div class="main-container">
         <!-- ########## MENU BAR ########## -->
-
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
            <a class="navbar-brand" href="#">MENU</a>
 
@@ -60,6 +56,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                             <a class="dropdown-item" href="pdf/systemadministrator.pdf" th:text="${it}">Some text...</a>
                             <a class="dropdown-item" href="pdf/vaadin.pdf" th:text="${vaadin}">Some text...</a>
                             <a class="dropdown-item" href="pdf/javase.pdf" th:text="${java}">Some text...</a>
+                            <a class="dropdown-item" href="https://www.hackerrank.com/certificates/491f2a22b7f7">Java (HackerRank)</a>
 
                         </div>
                     </li>
@@ -79,6 +76,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
             </form>
 
         </nav>
+        </div>
         <!-- ##########  SECTION DARK ######################## -->
 
         <section class="banner-container">
@@ -88,12 +86,11 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                     <div class="col-6">
                         <h1 class="home-title">Welcome to my website</h1>
                         <p class="b-text">This landing page has been created as my reference. 
-                        It uses HTML/CSS and a little bit of Javascript on the frontend and Spring Boot on the backend. 
-                        My application uses postgreSql database storing login details and ThymeLeaf is the technology which helps 
-                        in the communication delivering data between the front- and the backend.
-                        <span id="dots">..</span><span id="more"> <br><br>If you click on the `Get in touch` button under my IT speciaslizations below,
-            			you can type your details that I will be
-            			notified about and I can send you my CV.</span></p>
+                        It uses HTML/CSS and a little bit of Javascript on the front-end and Spring Boot on the back-end. 
+                        My application uses postgreSql database and ThymeLeaf is the technology which helps 
+                        in the communication delivering data between the front- and the back-end.
+                        <span id="dots"></span><span id="more"> <br><br>If type your name and email clicking on the `Get in touch` 
+                        button under my IT specialisations below, I will be notified about it and I can send you my CV.</span></p>
 
                         <button class="btn btn-dark" onclick="myFunction()" id="myBtn">Read more</button>
 
@@ -112,7 +109,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                                     btnText.innerHTML = "Read less";
                                     moreText.style.display = "inline";
                                 }
+                               
                             }
+                           
                         </script>
 
                     </div>
@@ -126,11 +125,11 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                                 <img class="b-video-img space" src="images/ben.png" alt=""/>
                             </div>
                             <p class="card-text font-style">
-                                Email: h.benya@gmail.com
+                                Email: halaszbenjamin1@gmail.com
                                 <br> Tel.: +3630/786-9153
                             </p>
                             <div class="card-btn">
-                                <a class="btn btn-primary buy-btn-lg" href="pdf/benjamin.pdf" th:text="${resume}">Some text...</a>
+                                <a class="btn btn-primary buy-btn-lg" href="pdf/2020 cv eng.pdf" th:text="${resume}">Some text...</a>
                             </div>
                         </div>
                     </div>
@@ -140,12 +139,14 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         </section>
 
         <!-- ########## SECTION /JUMBOTRON-WELCOME/ ########## -->
+        
 
         <div class="jumbotron text-center" style="margin-bottom:0">
 
             <div class="b-title font-style-two">
 
-                Hello <span sec:authentication="name" th:field="${name}">John Doe</span>, please find my IT specialization below
+			<!-- <span sec:authentication="name" th:field="${name}">John Doe</span> -->
+            <h3 class="it-title">MY IT STACK</h3>
 
             </div>
             <br>
@@ -153,11 +154,16 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
             <div class="row">
                 <div class="col-sm-12 col-md-6 offset-md-3">
+                
 
                     <table class="table table-bordered">
                         <thead>
+                       
                             <thead class="thead-dark">
+                              
+                          
                                 <tr>
+                                
                                     <th>Network Operating System and Cloud Services</th>
                                     <th>In Detail</th>
                                 </tr>
@@ -212,11 +218,14 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
         </div>
 
-        <div class="sectionLight">
+ <!-- ########## SECTION /IT SKILLS TABLE ########### -->
+ <section class="skills" style="background-color: #212630; padding-top:1.5rem">
+        <div>
             <div class="row">
 
                 <div class="col"></div>
                 <div class="col-sm-8">
+                <h3 style="color:white; text-align: center; padding-bottom: 1rem;">MY DEV STACK</h3>
 
                     <div>
                         <button class="toggle-btn btn-outline-dark toggle-btn-ownstyle" data-toggle="collapse" data-target="#demo" th:text="${developer}">some text</button>
@@ -234,11 +243,11 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                                 <div class="progress-bar bg-danger" style="width: 15%">
                                     Vaadin
                                 </div>
-                                <div class="progress-bar bg-success" style="width:55%">
-                                    Java, Spring Boot, HTML, CSS
+                                <div class="progress-bar bg-success" style="width:75%">
+                                    Java, Spring Boot, HTML, CSS, Github
                                 </div>
-                                <div class="progress-bar bg-warning" style="width: 30%">
-                                    Github, Docker
+                                <div class="progress-bar bg-warning" style="width: 10%; color: black;">
+                                    Docker
                                 </div>
 
                             </div>
@@ -254,18 +263,18 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                             <div class="developer-awesome">
                                 <i class="fab fa-windows fa-5x"></i>
                                 <i class="fas fa-server fa-5x"></i>
-                                <i class="fas fa-network-wired fa-5x"></i>
+                                <i class="fas fa-network-wired fa-5x" style="color:white; margin: 10px;"></i>
                                 <i class="fab fa-ubuntu fa-5x"></i>
                             </div>
 
                             <div class="progress">
-                                <div class="progress-bar bg-success" style="width: 50%">
+                                <div class="progress-bar bg-success" style="width: 35%">
                                     Windows Server 2016, Virtual box, Creating and managing GPO
                                 </div>
-                                <div class="progress-bar bg-warning" style="width: 45%">
+                                <div class="progress-bar bg-warning" style="width: 35%; color:black;">
                                     Modelling Network Architecture, basic system administrator tasks
                                 </div>
-                                <div class="progress-bar bg-danger" style="width: 5%">
+                                <div class="progress-bar bg-danger" style="width: 30%;">
                                     Linux
                                 </div>
 
@@ -279,6 +288,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
             </div>
         </div>
+        </section>
 
         <!-- ########## SECTION /MY NAME IS BENJAMIN/ ########## -->
         <div class="sectionDark">
@@ -311,7 +321,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                 <div class="col"></div>
                 <!--this is col-3 in this case-->
             </div>
-            <!-- ########## SECTION /IT SKILLS TABLE ########### -->
+           
 
             <!-- ##########SECTION GET IN TOUCH INSIDE SECTION /MY NAME IS BENJAMIN...########## -->
             <div class="row">
@@ -417,7 +427,16 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="modalFormWrapper">
-                                    <form action="/action_page.php" class="needs-validation" name="index" th:action="@{/addUser}" th:object="${formuser}" method="post">
+                                <!-- ########## preventing to reload page ########## 
+                                 <script type="text/javascript">
+                                let contact_forms = document.querySelector("#user-form-modal"); 
+								contact_forms.addEventListener("submit", function(ev) {
+   								 ev.preventDefault();
+								});
+								</script>
+                                -->
+                               
+                                    <form id="user-form-modal" action="" class="needs-validation" name="index" th:action="@{/addUser}" th:object="${formuser}" method="post">
                                         <div class="form-group">
                                             <label for="name">What's your name?</label>
 
@@ -432,20 +451,22 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-                                        <input class="btn btn-primary" type="submit" value="Submit" />
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                        
                                     </form>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+					</div>
                 </div>
             </div>
         </div>
-    </div>
+    
 
     <!-- ########## SECTION /VIDEOS/ ########## -->
     <!--More info Modal 1-->
@@ -515,8 +536,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-lg-3 socialWrapper">
-                    <p class="contact font-style">Email: h.benya@gmail.com
-                        <br>Phone: +3630/786-9153</p>
+                    <p class="contact font-style">Copyright 2020 © Benjamin Halász.
                 </div>
                 <div class="col-sm-12 col-lg-9 footer-font-icons">
                     <a href="https://github.com/HuserB8927?tab=repositories" target="_blank">
@@ -524,6 +544,8 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
                         <i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
                     <a href="https://stackoverflow.com/users/10525284/huserb1989" target="_blank">
                         <i class="fa fa-stack-overflow fa-3x" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/benjamin-halasz-3153531a5/" target="_blank">
+                        <i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
