@@ -191,9 +191,12 @@
 
 
 /*############## CUSTOM STYLES FOR SECTION `GET  IN TOUCH` ################*/
-
+.sectionDark {
+	padding: 5rem;
+}
 .coolStuffWrapper {
     margin-top: 20px;
+    
 }
 button.coolStuffBtn { /*we're a little bit more specific here and we say that any class of coolStuffBtn that is child of button, this is the styling that we want to use*/
     background-color: red;
